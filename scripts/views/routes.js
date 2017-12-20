@@ -1,7 +1,8 @@
 'use strict'
 
-page('/one', ctx => initOne(ctx))
+page('/newbook',app.bookView.initNewBook)
 page('/two', initTwo)
 page('/three/:letter', initThree)
+// page('/books/:id', showSomeDetail)
 
 page()

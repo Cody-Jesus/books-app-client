@@ -42,7 +42,7 @@
     <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/one">One</a></li>
+          <li><a href="/newbook">New Book</a></li>
           <li><a href="/two">Two</a></li>
           <li><a href="/three/a">Three</a></li>
           <li><a href="/three/b">Three</a></li>
@@ -64,8 +64,8 @@
 
     <section class="book-detail container">
       <h2 class="view-title">Book Detail</h2>
-      <section class="book-list">
-        <ul id="book-list"></ul>
+      <section class="book-detail">
+        <ul id="book-detail"></ul>
       </section>
     </section>
 
@@ -73,8 +73,42 @@
       <h2 class="view-title">Add New Book</h2>
       <section class="book-list">
         <ul id="book-list"></ul>
+        <p>next page for sure brother man!!!</p>
       </section>
     </section>
+
+    <section class="container" id="home">
+        <h1>This is a section: Home</h1>
+      </section>
+    
+      <section class="container" id="one">
+        <h1>Enter New Book</h1>
+        <section id="write" class="tab-content">
+            <form action="#" id="new-form">
+              <label>
+                <input type="text" id="article-title" placeholder="Article title" required>
+              </label>
+              <textarea id="article-body" rows="8" cols="40" required></textarea>
+              <label>
+                <input type="text" id="article-author" placeholder="Author Name" required>
+              </label>
+              <label>
+                <input type="text" id="article-author-url" placeholder="Author's URL" required>
+              </label>
+              <label>
+                <input type="text" id="article-category" placeholder="Category" required>
+              </label>
+              <button type="submit">Submit</button>
+            </form>
+      </section>
+    
+      <section class="container" id="two">
+        <h1>This is a section: Two</h1>
+      </section>
+    
+      <section class="container" id="three">
+        <h1>This is a section: Three</h1>
+      </section>
 
   </main>
   <footer>

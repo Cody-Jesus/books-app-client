@@ -11,19 +11,42 @@ var app = app || {};
     module.Book.all.map(book => $('#book-list').append(book.toHtml()))
   }
 
-  bookView.initIndexPage = function (err) {
+  bookView.initNewBook = function() {
+    // console.log()
     $('.container').hide()
-    $('.book-details').show()
-    module.Book.all.map(book => $('#book-list').append(book.toHtml()))
+    $('#one').show()
   }
 
-  bookView.initIndexPage = function (err) {
+  bookView.initDetailsPage = function (err) {
     $('.container').hide()
-    $('.book-view').show()
-    module.Book.all.map(book => $('#book-list').append(book.toHtml()))
+    $('.book-details').show()
+    module.Book.all[0].map(book => $('#book-detail').append(book.toHtml()))
   }
+
+  // bookView.initNewBook = function (err) {
+  //   $('.container').hide()
+  //   $('.book-view').show()
+  //   module.Book.all.map(book => $('#book-list').append(book.toHtml()))
+  // }
 
   module.bookView = bookView
 })(app)
 
+
+
+
+function initTwo(ctx) {
+  console.log('ctx', ctx)
+  $('.container').hide()
+  $('#two').show()
+}
+
+function initThree(ctx) {
+  console.log('ctx', ctx)
+  $('.container').hide()
+  $('#three').show()
+}
+
+
 $(() => app.Book.fetchAll(app.bookView.initIndexPage))
+
