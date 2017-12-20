@@ -1,0 +1,8 @@
+.container {
+    text-align: center;
+}
+
+body li p div{
+    text-align: center;
+    max-width: 100%;
+}
