@@ -19,9 +19,9 @@ var app = app || {};
 
   bookView.initDetailPage = function (err) {
     $('.container').hide()
-    $('.book-details').show()
-    $(`.book-details`).empty()
-    module.Book.all.map(book => $('#book-detail').append(book.toHtml(book-detail-template)))
+    $('#book-details').show()
+    $('.book-details').empty()
+    module.Book.all.map(book => $('#book-detail').append(book.toHtml('book-detail-template')))
 
   }
 

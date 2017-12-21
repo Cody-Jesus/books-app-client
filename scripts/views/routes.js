@@ -1,7 +1,7 @@
 'use strict'
 
 page('/', () => app.Book.fetchAll(app.bookView.initIndexPage))
-page('/', ctx => app.Book.fetchOne(ctx.params.id, app.bookView.initDetailPage))
+page('/books/:id', ctx => app.Book.fetchOne(ctx.params.id, app.bookView.initDetailPage))
 page('/newbook',app.bookView.initNewBook)
 // page('/')
 page('/two', initTwo)
