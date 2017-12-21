@@ -8,7 +8,7 @@ var app = app || {};
   bookView.initIndexPage = function (err) {
     $('.container').hide()
     $('.book-view').show()
-    module.Book.all.map(book => $('#book-list').append(book.toHtml()))
+    module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')))
   }
 
   bookView.initNewBook = function() {
@@ -17,10 +17,12 @@ var app = app || {};
     $('#one').show()
   }
 
-  bookView.initDetailsPage = function (err) {
+  bookView.initDetailPage = function (err) {
     $('.container').hide()
     $('.book-details').show()
-    module.Book.all[0].map(book => $('#book-detail').append(book.toHtml()))
+    $(`.book-details`).empty()
+    module.Book.all.map(book => $('#book-detail').append(book.toHtml(book-detail-template)))
+
   }
 
   // bookView.initNewBook = function (err) {
@@ -46,7 +48,4 @@ function initThree(ctx) {
   $('.container').hide()
   $('#three').show()
 }
-
-
-$(() => app.Book.fetchAll(app.bookView.initIndexPage))
 
