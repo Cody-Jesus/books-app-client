@@ -7,14 +7,16 @@ var app = app || {};
 
   bookView.initIndexPage = function (err) {
     $('.container').hide()
+    $('#book-list').empty()
     $('.book-view').show()
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')))
   }
 
   bookView.initNewBook = function() {
-    // console.log()
     $('.container').hide()
     $('#one').show()
+    $('#new-form').on('change', 'input, textarea', articleView.create);
+    $('#new-form').on('submit', articleView.submit);
   }
 
   bookView.initDetailPage = function (err) {
@@ -25,27 +27,26 @@ var app = app || {};
 
   }
 
-  // bookView.initNewBook = function (err) {
-  //   $('.container').hide()
-  //   $('.book-view').show()
-  //   module.Book.all.map(book => $('#book-list').append(book.toHtml()))
-  // }
+  bookView.create = function () {
+    var book;
+    $('#book-list').empty()
+    book = new Article({
+      title: $('#article-title').val(),
+      author: $('#article-author').val(),
+      imageUrl: $('#article-author-url').val(),
+      isbn: $('#article-category').val(),
+      description: $('#article-body').val(),
+    });
+
+    $('#book-list').append(book.toHtml('book-list-template'));
+    // $('pre code').each((i, block) => hljs.highlightBlock(block));
+  };
+
+
+
+
+
 
   module.bookView = bookView
 })(app)
-
-
-
-
-function initTwo(ctx) {
-  console.log('ctx', ctx)
-  $('.container').hide()
-  $('#two').show()
-}
-
-function initThree(ctx) {
-  console.log('ctx', ctx)
-  $('.container').hide()
-  $('#three').show()
-}
 
