@@ -44,14 +44,14 @@ var app = app || {};
 
   bookView.submit = event => {
     event.preventDefault();
-    let book = new Book({
+    let book = new app.({
       title: $('#article-title').val(),
       author: $('#article-author').val(),
       imageUrl: $('#article-author-url').val(),
       isbn: $('#article-category').val(),
       description: $('#article-body').val(),
     });
-   console.log('book', book);
+    console.log('book', book);
     // article.insertRecord();
    
     // REVIEW: The following line of code redirects the user back to the home page after submitting the form.
