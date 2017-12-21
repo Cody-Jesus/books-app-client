@@ -30,32 +30,32 @@ var app = app || {};
   bookView.create = function () {
     var book;
     $('#book-list').empty()
-    book = new Book({
-      title: $('#article-title').val(),
+    book = new app.Book({
       author: $('#article-author').val(),
-      imageUrl: $('#article-author-url').val(),
+      title: $('#article-title').val(),
       isbn: $('#article-category').val(),
+      image_url: $('#article-author-url').val(),
       description: $('#article-body').val(),
     });
-
+    console.log('current book: ', book)
     $('#book-list').append(book.toHtml('book-list-template'));
     // $('pre code').each((i, block) => hljs.highlightBlock(block));
   };
 
   bookView.submit = event => {
     event.preventDefault();
-    let book = new app.({
-      title: $('#article-title').val(),
+    let book = new app.Book({
       author: $('#article-author').val(),
-      imageUrl: $('#article-author-url').val(),
+      title: $('#article-title').val(),
       isbn: $('#article-category').val(),
+      image_url: $('#article-author-url').val(),
       description: $('#article-body').val(),
     });
     console.log('book', book);
-    // article.insertRecord();
+    book.insertRecord();
    
     // REVIEW: The following line of code redirects the user back to the home page after submitting the form.
-    window.location = '../';
+    window.location = '/';
   }
 
 
