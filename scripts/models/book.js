@@ -21,7 +21,7 @@ var app = app || {};
   Book.all = []
   Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book))
   
-  Book.fetchOne = callback =>
+  Book.fetchOne = (id, callback) =>
     $.get(`${__API_URL__}/api/v1/books/${id}`)
       .then(Book.loadAll)
       .then(callback)
