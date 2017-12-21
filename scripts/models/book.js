@@ -34,5 +34,12 @@ var app = app || {};
       .then(callback)
       .catch(errorCallback)
 
+  Book.prototype.insertRecord = function(callback) {
+    // REVIEW: Why can't we use an arrow function here for .insertRecord()?
+    $.post('/articles', {author: this.author, imageUrl: this.imageUrl, body: this.body, isbn: this.isbn, title: this.title})
+      .then(console.log)
+      .then(callback);
+  };
+
   module.Book = Book
 })(app)

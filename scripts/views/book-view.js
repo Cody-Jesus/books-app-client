@@ -15,8 +15,8 @@ var app = app || {};
   bookView.initNewBook = function() {
     $('.container').hide()
     $('#one').show()
-    $('#new-form').on('change', 'input, textarea', articleView.create);
-    $('#new-form').on('submit', articleView.submit);
+    $('#new-form').on('change', 'input, textarea', bookView.create);
+    $('#new-form').on('submit', bookView.submit);
   }
 
   bookView.initDetailPage = function (err) {
@@ -30,7 +30,7 @@ var app = app || {};
   bookView.create = function () {
     var book;
     $('#book-list').empty()
-    book = new Article({
+    book = new Book({
       title: $('#article-title').val(),
       author: $('#article-author').val(),
       imageUrl: $('#article-author-url').val(),
@@ -42,6 +42,21 @@ var app = app || {};
     // $('pre code').each((i, block) => hljs.highlightBlock(block));
   };
 
+  bookView.submit = event => {
+    event.preventDefault();
+    let book = new Book({
+      title: $('#article-title').val(),
+      author: $('#article-author').val(),
+      imageUrl: $('#article-author-url').val(),
+      isbn: $('#article-category').val(),
+      description: $('#article-body').val(),
+    });
+   console.log('book', book);
+    // article.insertRecord();
+   
+    // REVIEW: The following line of code redirects the user back to the home page after submitting the form.
+    window.location = '../';
+  }
 
 
 
