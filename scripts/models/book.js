@@ -14,8 +14,9 @@ var app = app || {};
     Object.keys(rawBookObj).map(key => this[key] = rawBookObj[key])
   }
 
-  Book.prototype.toHtml = function() {
-    return Handlebars.compile($('#book-list-template').text())(this)
+  Book.prototype.toHtml = function(templateId) {
+    let template = Handlebars.compile($(`#${templateId}`).text());
+    return template(this);
   }
 
   Book.all = []
