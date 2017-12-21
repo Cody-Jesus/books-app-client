@@ -22,6 +22,7 @@
         <div>
           <h2>{{title}}</h2>
           <p>{{author}}</p>
+
           <button type="button" id="bookid-{{book_id}}"><a href="/books/{{book_id}}">View Details</a></button>
         </div>
       </div>
@@ -100,15 +101,15 @@
               <label>
                 <input type="text" id="article-title" placeholder="Article title" required>
               </label>
-              <textarea id="article-body" rows="8" cols="40" required></textarea>
               <label>
                 <input type="text" id="article-author" placeholder="Author Name" required>
               </label>
               <label>
-                <input type="text" id="article-author-url" placeholder="Author's URL" required>
-              </label>
-              <label>
                 <input type="text" id="article-category" placeholder="Category" required>
+              </label>
+              <textarea id="article-body" rows="8" cols="40" required></textarea>
+              <label>
+                <input type="text" id="article-author-url" placeholder="Author's URL" required>
               </label>
               <button type="submit">Submit</button>
             </form>
