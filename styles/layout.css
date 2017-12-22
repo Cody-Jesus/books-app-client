@@ -30,8 +30,8 @@
     padding: 1%;
   }
   .nav-h1{
-    width: 7%;
-    position: absolute;
+    width: vw15;
+    display: inline;
     top: 10%;
     right: 1200px;
   }
