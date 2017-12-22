@@ -1,3 +1,8 @@
 ul {
     list-style: none;
 }
+
+header, footer{
+    background-color: lightgray;
+    width: 100%;
+}

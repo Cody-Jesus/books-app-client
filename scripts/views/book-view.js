@@ -24,7 +24,6 @@ var app = app || {};
     $('#detail-desc').empty()
     $('.detail-view').show()
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-detail-template')))
-
   }
 
   bookView.create = function () {

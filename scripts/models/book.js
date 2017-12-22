@@ -3,7 +3,8 @@
 var app = app || {};
 
 (function(module) {
-  var __API_URL__ = 'https://cw-jw-booklist.herokuapp.com';
+  // var __API_URL__ = 'https://cw-jw-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
 
   function errorCallback(err) {
     console.error(err)
@@ -36,7 +37,6 @@ var app = app || {};
 
   Book.prototype.insertRecord = function(callback) {
     // REVIEW: Why can't we use an arrow function here for .insertRecord()?
-    // console.log('inside insert: ', book)
     $.post(`${__API_URL__}`, {author: this.author, image_url: this.image_url, body: this.description, isbn: this.isbn, title: this.title})
       .then(console.log)
       .then(callback);
