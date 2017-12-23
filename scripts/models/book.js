@@ -22,13 +22,13 @@ var app = app || {};
 
   Book.all = []
   Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book))
-  
+
   Book.fetchOne = (id, callback) =>
     $.get(`${__API_URL__}/api/v1/books/${id}`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback)
-  
+
   Book.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/books`)
       .then(Book.loadAll)
@@ -42,6 +42,19 @@ var app = app || {};
       .then(console.log)
       .then(callback);
   };
+
+  Book.prototype.remove = id => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${id}`,
+      method: 'DELETE'
+    })
+      // .then(console.log)
+      .then(() => page('/'))
+      // .then(callback);
+      .catch(errorCallback)
+  };
+
+
 
   module.Book = Book
 })(app)

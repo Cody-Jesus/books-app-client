@@ -24,6 +24,11 @@ var app = app || {};
     $('#detail-desc').empty()
     $('.detail-view').show()
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-detail-template')))
+    $('.delete').on('click', function(event) {
+      event.preventDefault();
+      module.Book.remove(this.id)
+        .then(() => page('/'));
+    });
   }
 
   bookView.create = function () {
@@ -52,7 +57,7 @@ var app = app || {};
     });
     console.log('book', book);
     book.insertRecord();
-   
+
     // REVIEW: The following line of code redirects the user back to the home page after submitting the form.
     window.location = '/';
   }
